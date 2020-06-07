@@ -19,7 +19,7 @@
 		<div class="box-header with-border">
 			<div class="row" style="margin-bottom: 20px">
 				<div class="col-md-12 text-right">
-					<a href="<?php echo base_url('admin/usuarios/modulo') ?>" title="Novo Usuário" class="btn btn-success"><i class="fa fa-plus-circle"></i> Novo
+					<a href="<?php echo base_url('admin/usuarios/modulo') ?>" title="Novo Usuario" class="btn btn-success"><i class="fa fa-plus-circle"></i> Novo
 						Usuário </a>
 				</div>
 			</div>

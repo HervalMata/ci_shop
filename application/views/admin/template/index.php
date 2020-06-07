@@ -198,7 +198,23 @@
 					</li>
 					<li class="nav-header">Páginas</li>
 					<li class="nav-item">
+						<a href="<?php echo base_url('admin/config') ?>" class="nav-link">
+							<i class="nav-icon far fa-building-o"></i>
+							<p>
+								Configuração
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a href="<?php echo base_url('admin/usuarios') ?>" class="nav-link">
+							<i class="nav-icon far fa-user-circle-o"></i>
+							<p>
+								Administradores
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?php echo base_url('admin/clientes') ?>" class="nav-link">
 							<i class="nav-icon far fa-user"></i>
 							<p>
 								Clientes
@@ -303,6 +319,7 @@
 <script src="<?php echo base_url('public/plugins/summernote/summernote-bs4.min.js') ?>"></script>
 <!-- overlayScrollbars -->
 <script src="<?php echo base_url('public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
+<script src="<?php echo base_url('public/plugins/jQuery-Mask-Plugin/dist/jquery.mask.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('public/js/adminlte.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
