@@ -28,3 +28,11 @@ function erroValidacao()
 		echo '<div class="alert alert-danger" role="alert">' . validation_errors() .'</div>';
 	}
 }
+
+function dataDiaDB()
+{
+	date_default_timezone_get('America/Sao_paulo');
+	$formato = 'DATE_W3C';
+	$hora = time();
+	return standard_date($formato, $hora);
+}
