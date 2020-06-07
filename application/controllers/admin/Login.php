@@ -19,7 +19,7 @@ class Login extends CI_Controller
 			$password = $this->input->post('password');
 			$remember = ($this->input->post('remember') != NULL ? TRUE : False);
 			if ($this->ion_auth->login($identity, $password, $remember)) {
-				redirect('admin/principal', 'refresh');
+				redirect('admin/dashboard', 'refresh');
 			} else {
 				redirect('admin/login', 'refresh');
 			}
