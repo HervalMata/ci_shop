@@ -24,11 +24,11 @@ class Clientes_model extends CI_Model
 		}
 	}
 
-	public function getClienteId($id = NULL)
+	public function getClienteId($id_cliente = NULL)
 	{
-		if ($id)
+		if ($id_cliente)
 		{
-			$this->db->where('id', $id);
+			$this->db->where('id', $id_cliente);
 			$this->db->limit(1);
 			$query = $this->db->get('clientes');
 			return $query->row();

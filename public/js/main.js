@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$('.btn-apagar-registro').on('click', function () {
+	$('.btn-remover-registro').on('click', function () {
 		if (confirm("Deseja remover esse registro?")) {
 			return true;
 		}

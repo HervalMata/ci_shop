@@ -43,7 +43,7 @@
 					echo '<td class="text-right">';
 
 					echo '<a href="' . base_url('admin/usuarios/modulo/' . $user->id) . '" title="Editar" class="btn btn-warning"><i class="fa fa-edit"></i></a>';
-					echo '<a href="' . base_url('admin/usuarios/del/' . $user->id) . '" title="Remover" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>';
+					echo '<a href="' . base_url('admin/usuarios/del/' . $user->id) . '" title="Remover" class="btn btn-danger btn-remover-registro"><i class="fa fa-trash-alt"></i></a>';
 					echo '</td>';
 					echo '</tr>';
 				}
