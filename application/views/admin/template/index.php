@@ -230,6 +230,14 @@
 						</a>
 					</li>
 					<li class="nav-item">
+						<a href="<?php echo base_url('admin/marcas') ?>" class="nav-link">
+							<i class="nav-icon fas fa-tags"></i>
+							<p>
+								Categorias
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a href="<?php echo base_url('admin/categorias') ?>" class="nav-link">
 							<i class="nav-icon fas fa-indent"></i>
 							<p>

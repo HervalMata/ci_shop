@@ -70,7 +70,7 @@ class Categorias extends CI_Controller
 			{
 				$id_categoria = $this->input->post('id_categoria');
 				$data['ultima_atualizacao'] = dataDiaDB();
-				$this->clientes_model->doUpdate($data, $id_categoria);
+				$this->categorias_model->doUpdate($data, $id_categoria);
 				redirect('admin/categorias', 'refresh');
 			}
 			else
