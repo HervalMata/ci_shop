@@ -54,9 +54,9 @@ class Categorias extends CI_Controller
 	 */
 	public function core()
 	{
-		$this->form_validation->set_rules('nome', 'Nome', 'trim|required|min_length[5]');
+		$this->form_validation->set_rules('nome_categoria', 'Nome', 'trim|required|min_length[5]');
 		if ($this->form_validation->run() == TRUE){
-			$data['nome'] = $this->input->post('nome');
+			$data['nome'] = $this->input->post('nome_categoria');
 			$data['ativo'] = $this->input->post('ativo');
 			if ($this->input->post('id_categoriapai'))
 			{
@@ -75,6 +75,7 @@ class Categorias extends CI_Controller
 			}
 			else
 			{
+				$data['data_cadastro'] = dataDiaDB();
 				$this->categorias_model->doInsert($data);
 				redirect('admin/categorias/modulo', 'refresh');
 			}

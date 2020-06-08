@@ -50,4 +50,20 @@ class Marcas_model extends CI_Model
 			}
 		}
 	}
+
+	public function doDelete($id_marca = NULL)
+	{
+		if ($id_marca)
+		{
+			$this->db->delete('marcas', array('id' => $id_marca));
+			if ($this->db->affected_rows() > 0)
+			{
+				setMsg('msgCadastro', 'Marca removida com sucesso', 'sucesso');
+			}
+			else
+			{
+				setMsg('msgCadastro', 'Erro ao remover marca', 'erro');
+			}
+		}
+	}
 }

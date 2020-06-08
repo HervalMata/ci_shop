@@ -22,6 +22,8 @@
 	<link rel="stylesheet" href="<?php echo base_url('public/plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
 	<!-- JQVMap -->
 	<link rel="stylesheet" href="<?php echo base_url('public/plugins/jqvmap/jqvmap.min.css') ?>">
+
+	<link rel="stylesheet" href="<?php echo base_url('public/css/uploadfile.css') ?>">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php echo base_url('public/css/adminlte.min.css') ?>">
 	<!-- overlayScrollbars -->
@@ -33,6 +35,7 @@
 	<!-- datatables -->
 	<link rel="stylesheet" href="<?php echo base_url('public/plugins/datatables-bs4/css/dataTables4.bootstrap4.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('public/datatables/datatables.css') ?>">
+	<link rel="stylesheet" href="<?php echo base_url('public/css/main.css') ?>">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -199,7 +202,7 @@
 					<li class="nav-header">Páginas</li>
 					<li class="nav-item">
 						<a href="<?php echo base_url('admin/config') ?>" class="nav-link">
-							<i class="nav-icon far fa-building-o"></i>
+							<i class="nav-icon far fa-building"></i>
 							<p>
 								Configuração
 							</p>
@@ -207,7 +210,7 @@
 					</li>
 					<li class="nav-item">
 						<a href="<?php echo base_url('admin/usuarios') ?>" class="nav-link">
-							<i class="nav-icon far fa-user-circle-o"></i>
+							<i class="nav-icon far fa-users"></i>
 							<p>
 								Administradores
 							</p>
@@ -233,7 +236,7 @@
 						<a href="<?php echo base_url('admin/marcas') ?>" class="nav-link">
 							<i class="nav-icon fas fa-tags"></i>
 							<p>
-								Categorias
+								Marcas
 							</p>
 						</a>
 					</li>
@@ -246,7 +249,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link">
+						<a href="<?php echo base_url('admin/produtos') ?>" class="nav-link">
 							<i class="nav-icon fas fa-socks"></i>
 							<p>
 								Produtos
@@ -328,6 +331,7 @@
 <!-- overlayScrollbars -->
 <script src="<?php echo base_url('public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
 <script src="<?php echo base_url('public/plugins/jQuery-Mask-Plugin/dist/jquery.mask.js') ?>"></script>
+<script src="<?php echo base_url('public/js/jquery.uploadfile.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('public/js/adminlte.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

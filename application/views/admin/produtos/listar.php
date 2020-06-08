@@ -19,8 +19,8 @@
 		<div class="box-header with-border">
 			<div class="row" style="margin-bottom: 20px">
 				<div class="col-md-12 text-right">
-					<a href="<?php echo base_url('admin/categorias/modulo') ?>" title="Novo Categoria" class="btn btn-success"><i class="fa fa-plus-circle"></i> Novo
-						Categoria </a>
+					<a href="<?php echo base_url('admin/produtos/modulo') ?>" title="Novo Produto" class="btn btn-success"><i class="fa fa-plus-circle"></i> Novo
+						Produto </a>
 				</div>
 			</div>
 			<?php getMsg('msgCadastro'); ?>
@@ -28,22 +28,27 @@
 				<thead>
 				<tr>
 					<th>Nome</th>
-					<th>Categoria Pai</th>
+					<th>Marca</th>
+					<th>Categoria</th>
+					<th>Valor</th>
+					<th>Estoque</th>
 					<th class="text-center">Status</th>
 					<th class="text-right">Ações</th>
 				</tr>
 				</thead>
 				<tbody>
 				<?php
-				foreach ($categorias as $cat) {?>
+				foreach ($produtos as $produto) {?>
 					<tr>
-						<td><?= $cat->nome_categoria ?></td>
-						<td><?= $this->categorias_model->getCategoriaPaiNome($cat->id_categoriaspai) ?></td>
-						<td class="text-center"><?= ($cat->ativo == 1 ? '<span class="badge badge-success">Ativo</span>' : '<span class="badge badge-danger">Inativo</span>') ?></td>
+						<td><?= $produto->nome ?></td>
+						<td><?= $produto->nome_marca ?></td>
+						<td><?= $produto->nome_categoria ?></td>
+						<td><?= formataMoedaReal($produto->valor, TRUE) ?></td>
+						<td><?= $produto->estoque ?></td>
+						<td class="text-center"><?= ($produto->ativo == 1 ? '<span class="badge badge-success">Ativo</span>' : '<span class="badge badge-danger">Inativo</span>') ?></td>
 						<td class="text-right">
-
-							<a href="<?= base_url('admin/categorias/modulo/' . $cat->id) ?>" title="Editar" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-							<a href="<?= base_url('admin/categorias/del/' . $cat->id) ?>" title="Remover" class="btn btn-danger btn-remover-registro"><i class="fa fa-trash-alt"></i></a>
+							<a href="<?= base_url('admin/produtos/modulo/' . $produto->id) ?>" title="Editar" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+							<a href="<?= base_url('admin/produtos/del/' . $produto->id) ?>" title="Remover" class="btn btn-danger btn-remover-registro"><i class="fa fa-trash-alt"></i></a>
 						</td>
 					</tr>
 				<?php }

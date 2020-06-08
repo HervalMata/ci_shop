@@ -21,7 +21,7 @@ class Categorias_model extends CI_Model
 			$this->db->where('id', $id_categoriaspai);
 			$this->db->limit(1);
 			$query = $this->db->get('categorias')->row();
-			return $query->name;
+			return $query->name_categoria;
 		}
 	}
 
@@ -64,6 +64,22 @@ class Categorias_model extends CI_Model
 			else
 			{
 				setMsg('msgCadastro', 'Erro ao atualizar categoria', 'erro');
+			}
+		}
+	}
+
+	public function doDelete($id_categoria = NULL)
+	{
+		if ($id_categoria)
+		{
+			$this->db->delete('categorias', array('id' => $id_categoria));
+			if ($this->db->affected_rows() > 0)
+			{
+				setMsg('msgCadastro', 'Categoria removida com sucesso', 'sucesso');
+			}
+			else
+			{
+				setMsg('msgCadastro', 'Erro ao remover categoria', 'erro');
 			}
 		}
 	}

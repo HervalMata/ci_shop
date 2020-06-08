@@ -40,7 +40,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label">Nome</label>
 					<div class="col-sm-12">
-						<input type="text" name="nome" class="form-control" placeholder="Nome" value="<?php echo ( $dados != NULL ? $dados->nome : set_value('nome')) ?>">
+						<input type="text" name="nome" class="form-control" placeholder="Nome" value="<?php echo ( $dados != NULL ? $dados->nome_marca : set_value('nome')) ?>">
 					</div>
 				</div>
 

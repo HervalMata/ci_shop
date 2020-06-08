@@ -36,7 +36,7 @@
 				<?php
 				foreach ($marcas as $marca) {?>
 					<tr>
-						<td><?= $marca->nome ?></td>
+						<td><?= $marca->nome_marca ?></td>
 						<td class="text-center"><?= ($marca->ativo == 1 ? '<span class="badge badge-success">Ativo</span>' : '<span class="badge badge-danger">Inativo</span>') ?></td>
 						<td class="text-right">
 
