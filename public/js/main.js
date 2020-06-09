@@ -20,6 +20,78 @@ $(document).ready(function () {
 			return false;
 		}
 	})
+	$(document).on('click', '.btn-mudar-status-pedido', function () {
+		var id = $(this).attr('data-id-pedido');
+		$.ajax({
+			type: "GET",
+			url: "http://localhost:8080/admin/pedidos/getPedido/" + id + "",
+			dataType: "json",
+			success: function (resposta) {
+				if (resposta.erro === 0) {
+					$('.modal_dinamico').append('<div class="modal fade" data-backdrop="static" id="modal_pedido' + id + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
+															'<div class="modal-dialog" role="document">' +
+																'<div class="modal-content">' +
+																	'<div class="modal-header">' +
+																		'<h4 class="modal-title" id="myModalLabel">Mudar Status do Pedido [#' + resposta.id_pedido + ']</h4>' +
+																		'<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+																	'</div>'+
+																	'<div class="modal-body">' +
+																		'<p>Status atual: ' + resposta.status + '</p>'+
+																		'<form method="post" action="http://localhost:8080/admin/pedidos/mudarStatus/">'+
+																		'<div class="form-group">' +
+																		'<label class="col-sm-3 control-label">Mudar Status</label>'+
+																		'<div class="col-sm-7">'+
+																			'<select name="status" class="form-control">'+
+																				'<option value="1">Aguardando Pagamento</option>'+
+																				'<option value="2">Pagamento Confirmado</option>'+
+																				'<option value="3">Pedido Enviado</option>'+
+																				'<option value="4">Pedido Cancelado</option>'+
+																			'</select>'+
+																		'</div>'+
+																	'</div>' +
+																	'</form>'+
+																	'</div>'+
+																	'<div class="modal-footer">' +
+																		'<button type="button" class="btn btn-default" data-dimiss="modal">Fechar</button>'+
+																		'<button type="button" class="btn btn-primary btn-atualizar-status-pedido" data-id-pedido="' + id + '">Atualizar</button>'+
+																	'</div>'+
+																'</div>' +
+															'</div>' +
+														'</div>');
+					$('#modal_pedido' + id ).modal('show');
+					$('#modal_pedido' + id ).on('hidden.bs.modal', function (e) {
+						$(this).remove();
+					})
+				} else {
+					alert(resposta.msg);
+				}
+			},
+			error: function () {
+				alert('Erro ao buscar pedido');
+			}
+		})
+
+	})
+	$(document).on('click', '.btn-atualizar-status-pedido', function () {
+		var status = $('[name="status"]').val();
+		var id_pedido = $(this).attr('data-id-pedido');
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:8080/admin/pedidos/mudarStatus",
+			data: {input_status: status, input_id: id_pedido},
+			dataType: "json",
+			success: function (resposta) {
+				if (resposta.erro === 0) {
+					alert('Status atualizado com sucesso!');
+				} else {
+					alert('Erro ao mudar o status');
+				}
+			},
+			error: function () {
+				alert('Erro ao salvar o status');
+			}
+			});
+	})
 	$('.btn-remover-registro').on('click', function () {
 		if (confirm("Deseja remover esse registro?")) {
 			return true;

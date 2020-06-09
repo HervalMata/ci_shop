@@ -210,7 +210,7 @@
 					</li>
 					<li class="nav-item">
 						<a href="<?php echo base_url('admin/config/pagseguro') ?>" class="nav-link">
-							<i class="nav-icon far fa-building"></i>
+							<i class="nav-icon fas fa-money-bill-wave"></i>
 							<p>
 								PagSeguro
 							</p>
@@ -218,7 +218,7 @@
 					</li>
 					<li class="nav-item">
 						<a href="<?php echo base_url('admin/config/correios') ?>" class="nav-link">
-							<i class="nav-icon far fa-building"></i>
+							<i class="nav-icon fab fa-fedex"></i>
 							<p>
 								Correios
 							</p>
@@ -226,7 +226,7 @@
 					</li>
 					<li class="nav-item">
 						<a href="<?php echo base_url('admin/usuarios') ?>" class="nav-link">
-							<i class="nav-icon far fa-users"></i>
+							<i class="nav-icon fas fa-user-tie"></i>
 							<p>
 								Administradores
 							</p>
@@ -241,7 +241,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link">
+						<a href="<?php echo base_url('admin/pedidos') ?>" class="nav-link">
 							<i class="nav-icon fas fa-cash-register"></i>
 							<p>
 								Ordens
