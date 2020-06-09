@@ -209,6 +209,22 @@
 						</a>
 					</li>
 					<li class="nav-item">
+						<a href="<?php echo base_url('admin/config/pagseguro') ?>" class="nav-link">
+							<i class="nav-icon far fa-building"></i>
+							<p>
+								PagSeguro
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?php echo base_url('admin/config/correios') ?>" class="nav-link">
+							<i class="nav-icon far fa-building"></i>
+							<p>
+								Correios
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a href="<?php echo base_url('admin/usuarios') ?>" class="nav-link">
 							<i class="nav-icon far fa-users"></i>
 							<p>

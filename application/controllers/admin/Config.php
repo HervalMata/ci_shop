@@ -42,4 +42,48 @@ class Config extends CI_Controller
 			$this->load->view('admin/template/index', $data);
 		}
 	}
+
+	public function pagseguro()
+	{
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('token', 'Token', 'trim|required');
+		if ($this->form_validation->run() == TRUE)
+		{
+			$dadosPagseguro['email'] = $this->input->post('email');
+			$dadosPagseguro['token'] = $this->input->post('token');
+			$dadosPagseguro['boleto'] = $this->input->post('boleto');
+			$dadosPagseguro['cartao'] = $this->input->post('cartao');
+			$dadosPagseguro['debito'] = $this->input->post('debito');
+			$dados['data_atualizacao'] = dataDiaDB();
+			$this->config_model->doUpdatePagseguro($dadosPagseguro);
+			redirect('admin/config/pagseguro', 'refresh');
+		}
+		else
+		{
+			$data['titulo'] = 'Configuração do PagSeguro';
+			$data['view'] = 'admin/config/pagseguro';
+			$data['query'] = $this->config_model->getConfigPagseguro();
+			$this->load->view('admin/template/index', $data);
+		}
+	}
+
+	public function correios()
+	{
+		$this->form_validation->set_rules('cep_origem', 'CEP Origem', 'trim|required');
+		if ($this->form_validation->run() == TRUE)
+		{
+			$dadosCorreios['cep_origem'] = $this->input->post('cep_origem');
+			$dadosCorreios['frete'] = $this->input->post('frete');
+			$dados['data_atualizacao'] = dataDiaDB();
+			$this->config_model->doUpdateCorreios($dadosCorreios);
+			redirect('admin/config/correios', 'refresh');
+		}
+		else
+		{
+			$data['titulo'] = 'Configuração dos Correios';
+			$data['view'] = 'admin/config/correios';
+			$data['query'] = $this->config_model->getConfigCorreios();
+			$this->load->view('admin/template/index', $data);
+		}
+	}
 }
