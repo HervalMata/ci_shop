@@ -18,8 +18,19 @@
 	<div class="box">
 		<div class="box-header with-border">
 			<div class="row" style="margin-bottom: 20px">
-				<div class="col-md-12 text-right">
-					<a href="#" title="Novo Categoria" class="btn btn-success"><i class="fa fa-file-text-o"></i> Relatórios </a>
+				<div class="col-md-12">
+					<div class="btn-group">
+						<button type="button" class="btn btn-success"><i class="fa fa-file-text-o"></i> Relatórios</button>
+						<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="<?= base_url('admin/relatorios/diario') ?>" target="_blank">Vendas Diárias</a> </li>
+							<li><a href="<?= base_url('admin/relatorios/periodo') ?>" target="_blank">Vendas Por Periodo</a> </li>
+							<li><a href="<?= base_url('admin/relatorios/mais_vendidos') ?>" target="_blank">Produtos Mais Vendidos</a> </li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<?php getMsg('msgCadastro'); ?>

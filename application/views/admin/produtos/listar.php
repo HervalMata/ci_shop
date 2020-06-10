@@ -18,7 +18,18 @@
 	<div class="box">
 		<div class="box-header with-border">
 			<div class="row" style="margin-bottom: 20px">
-				<div class="col-md-12 text-right">
+				<div class="col-md-6">
+					<div class="btn-group">
+						<button type="button" class="btn btn-success"><i class="fa fa-file-text-o"></i> Relatórios</button>
+						<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="<?= base_url('admin/relatorios/mais_vendidos') ?>" target="_blank">Produtos Mais Vendidos</a> </li>
+						</ul>
+					</div>
+				<div class="col-md-6 text-right">
 					<a href="<?php echo base_url('admin/produtos/modulo') ?>" title="Novo Produto" class="btn btn-success"><i class="fa fa-plus-circle"></i> Novo
 						Produto </a>
 				</div>
